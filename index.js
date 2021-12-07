@@ -28,8 +28,7 @@ admin.initializeApp({
 const port = process.env.PORT || 3000
 
 
-app.post('/firebase/notification',(req,res)=>{
-
+app.get('/',(req,res)=>{
     const message =  {
         notification:{
             title:req.body.sender,
