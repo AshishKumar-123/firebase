@@ -4,13 +4,13 @@ const admin = require('../../firebase-config')
  
 
 router.post('/',(req,res)=>{
-    const myToken =  req.body.myToken
+
    const  message = {
         notification:{
             title:req.body.sender,
             body:req.body.message,
         },
-        tokens:req.body.tokens-myToken
+        tokens:req.body.tokens
     }
 
     admin.messaging().sendMulticast(message).then(res=>{
