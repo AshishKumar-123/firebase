@@ -17,7 +17,8 @@ router.post('/',(req,res)=>{
             title:req.body.sender,
             body:req.body.message,
         },
-        tokens:req.body.tokens
+        tokens:req.body.tokens,
+        default_sound:true
     }
 
     admin.messaging().sendMulticast(message).then(res=>{
