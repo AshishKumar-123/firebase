@@ -15,10 +15,10 @@ router.post('/',(req,res)=>{
    const  message = {
         notification:{
             title:req.body.sender,
-            body:req.body.message,
+            body:req.body.message, 
+            image:req.body.image
         },
         tokens:req.body.tokens,
-        default_sound:true
     }
 
     admin.messaging().sendMulticast(message).then(res=>{
