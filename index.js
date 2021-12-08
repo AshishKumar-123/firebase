@@ -3,5 +3,7 @@ const app = require('./app')
 const server = http.createServer(app)
 require('dotenv').config()
 
-server.listen(3000,console.log('listenting to server 3000'))
+const port = process.env.PORT || 3000
+
+server.listen(port,console.log('listenting to server 3000'))
 
